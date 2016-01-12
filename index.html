@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <title>Todo Demo</title>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>Todo demo</h1>
+        </header>
+        <main class="main">
+            <section class="left">
+                <div id="allTasks" data-cateid="-1" class="list-title all-tasks active" onclick="clickCate(this)">任务归档 (<span></span>)
+                </div>
+                <div class="list-title">分类列表</div>
+                <div id="listcontent" class="list">
+                </div>
+                <button class="add" onclick="clickAddCate()"><i class="fa fa-plus"></i></button>
+            </section>
+            <section class="mid">
+                <div class="status">
+                    <button id="all-tasks" class="active">所有</button>
+                    <button id="unfinish-tasks">未完成</button>
+                    <button id="finished-tasks">已完成</button>
+                </div>
+                <div id="task-list" class="task-list"></div>
+                <button class="add-task add" onclick="clickAddTask()"><i class="fa fa-plus"></i></button>
+            </section>
+            <section class="right">
+                <div class="title">
+                    <div class="todo-name">todo-1</div>
+                    <div class="manipulate">
+                        <a><i class="fa fa-check-square-o"></i></a>
+                        <a><i class="fa fa-pencil-square-o"></i></a>
+                    </div>
+                </div>
+                <div class="task-date">
+                    任务日期：<span></span>
+                </div>
+                <div class="content"></div>
+                <div class="button-area"></div>
+            </section>
+        </main>
+        <div class="cover">
+            <div class="modal">
+                <div class="modal-head">
+                    新增分类
+                </div>
+                <div class="modal-body">
+                    选择主分类：<select id="modal-select">
+                    </select><br>
+                    新分类名称：<input id="newCateName" type="text">
+                </div>
+                <div class="modal-foot">
+                    <button onclick="cancel()">取消</button>
+                    <button onclick="ok()">确认</button>
+                </div>
+            </div>
+        </div>
+        <script src="js/util.js"></script>
+        <script src="js/todo.js"></script>
+    </body>
+</html>
